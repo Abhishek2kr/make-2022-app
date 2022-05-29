@@ -8,6 +8,10 @@ const getMetaRepo = async function(query={}){
    return await metaSchema.findOne(query);
 }
 
+const getMetasRepo = async function(query={}){
+    return await metaSchema.find(query);
+ }
+
 const getMetaByIdRepo = async function(id) {
     return await metaSchema.findById(id).exec();
 }
@@ -15,5 +19,6 @@ const getMetaByIdRepo = async function(id) {
 module.exports = {
     setMetaRepo,
     getMetaRepo,
-    getMetaByIdRepo
+    getMetaByIdRepo,
+    getMetasRepo
 }
