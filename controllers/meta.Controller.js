@@ -32,6 +32,7 @@ const srcTargetMappingController = async(req,res,next) => {
   try {
      console.log(req.body);
      const { metaTableName, containsCol } = req.body;
+     console.log(req.body, metaTableName, containsCol);
      console.log(req.body, req.file)
      if(!metaTableName) return res.status(400).json("Bad request");
      const response = await metaService.uploadAndProcessSourceFile(containsCol,metaTableName, req.file);
